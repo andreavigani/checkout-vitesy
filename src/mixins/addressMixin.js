@@ -63,6 +63,11 @@ export const addressMixin = {
       required: requiredIf(function (model) {
         return this.requiresBillingInfo
       })
+    },
+    company: {
+      required: requiredIf(function (model) {
+        return this.requiresBillingInfo
+      })
     }
   },
   methods: {

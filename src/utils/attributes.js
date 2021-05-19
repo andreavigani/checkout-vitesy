@@ -56,6 +56,7 @@ export const orderAttributes = [
   'billing_address.country_code',
   'billing_address.phone',
   'billing_address.billing_info',
+  'billing_address.company',
   'billing_address.notes',
   'shipping_address.id',
   'shipping_address.first_name',
@@ -68,6 +69,7 @@ export const orderAttributes = [
   'shipping_address.country_code',
   'shipping_address.phone',
   'shipping_address.billing_info',
+  'shipping_address.company',
   'shipping_address.notes',
   'shipments.id',
   'shipments.number',
@@ -110,6 +112,7 @@ export const addressAttributes = [
   'country_code',
   'phone',
   'billing_info',
+  'company',
   'notes'
 ]
 
@@ -126,6 +129,7 @@ export const customerAddressAttributes = [
   'address.country_code',
   'address.phone',
   'address.billing_info',
+  'address.company',
   'address.notes'
 ]
 
@@ -173,7 +177,8 @@ export const addressDefaults = order => {
     state_code: '',
     country_code: order.shipping_country_code_lock || '',
     phone: '',
-    billing_info: ''
+    billing_info: '',
+    company: ''
   }
 }
 

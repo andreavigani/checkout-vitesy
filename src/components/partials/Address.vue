@@ -9,6 +9,8 @@
     {{ address.phone }}
     <span v-if="billing">
       <br />
+      {{ address.company }}
+      <br />
       {{ address.billing_info }}
     </span>
   </div>

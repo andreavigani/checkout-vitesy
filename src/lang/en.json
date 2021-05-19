@@ -1,6 +1,7 @@
 {
   "addresses": {
-    "billing_info": "billing info",
+    "billing_info": "VAT number",
+    "company": "company",
     "city": "city",
     "country_code": "country",
     "first_name": "first name",

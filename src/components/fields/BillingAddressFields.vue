@@ -116,6 +116,14 @@
           @input="handleInput()"
           @blur="handleBlur('billing_info')"
         ></v-text-field>
+        <v-text-field
+          id="billing-address-company"
+          :label="inputLabel('company')"
+          v-model="company"
+          :error-messages="errorMessages('company')"
+          @input="handleInput()"
+          @blur="handleBlur('company')"
+        ></v-text-field>
       </v-flex>
       <v-flex xs12 px-2 v-if="showAddressBook">
         <v-checkbox
@@ -151,6 +159,7 @@ export default {
       'order.billing_address.zip_code',
       'order.billing_address.phone',
       'order.billing_address.billing_info',
+      'order.billing_address.company',
       'order._save_billing_address_to_customer_address_book'
     ])
   },
