@@ -31,7 +31,7 @@ export default {
   },
   metaInfo () {
     return {
-      title: `Checkout #${this.order.number}`
+      title: `Checkout #${this.order.number} | Vitesy`
     }
   }
 }

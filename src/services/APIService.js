@@ -458,6 +458,17 @@ const placeOrder = order => {
     })
 }
 
+const getDeliveryLeadTimes = () => {
+  return apiClient
+    .get('/delivery_lead_times?include=shipping_method,stock_location')
+    .then(response => {
+      return response.data
+    })
+    .catch(error => {
+      return Promise.reject(error.response)
+    })
+}
+
 export default {
   handleCustomerSubscription,
   getOrder,
@@ -469,5 +480,6 @@ export default {
   updateOrderPaymentMethod,
   createOrderPaymentSource,
   updateOrderPaymentSource,
-  placeOrder
+  placeOrder,
+  getDeliveryLeadTimes
 }

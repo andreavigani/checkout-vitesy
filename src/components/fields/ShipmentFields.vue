@@ -42,7 +42,16 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      delivery_lead_times: []
+    }
+  },
   methods: {
+    async getDeliveryLeadTimes(){
+      const response = await this.$store.dispatch('getDeliveryLeadTimes')
+      this.delivery_lead_times = response.data || []
+    },
     updateValidations () {
       this.invalid_shipments = !_.isEmpty(
         _.find(this.order.shipments, shipment => {
@@ -50,8 +59,14 @@ export default {
         })
       )
     },
-    shippingMethodLabel: shippingMethod => {
-      return `${shippingMethod.name} - ${shippingMethod.formatted_price_amount_for_shipment}`
+    shippingMethodLabel(shippingMethod) {
+      const deliveryLeadTime = this.delivery_lead_times.map((dlt) => {
+        if (dlt.relationships.shipping_method.data.id === shippingMethod.id) { 
+          return `${dlt.attributes.min_days}-${dlt.attributes.max_days} ${this.$t('order_summary.days')}`
+        }
+      })
+
+      return `${shippingMethod.name} - ${shippingMethod.formatted_price_amount_for_shipment} - ${deliveryLeadTime[0] || ''}`
     },
     handleChange (shippingMethod) {
       let payload = {
@@ -79,8 +94,9 @@ export default {
     ...mapState(['order']),
     ...mapFields(['validations.invalid_shipments'])
   },
-  mounted () {
+  async mounted () {
     this.updateValidations()
+    await this.getDeliveryLeadTimes()
   }
 }
 </script>

@@ -275,6 +275,13 @@ export default new Vuex.Store({
         .finally(() => {
           commit('updateButtonLoadingPayment', false)
         })
+    },
+    getDeliveryLeadTimes ({ commit }) {
+      return APIService.getDeliveryLeadTimes()
+        .then(deliveryLeadTimes => {
+          return deliveryLeadTimes
+        })
+        .catch(response => console.log(response))
     }
   }
 })

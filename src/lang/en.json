@@ -54,7 +54,8 @@
     "taxes": "taxes",
     "gift_card": "gift card",
     "title": "order summary",
-    "total": "order total"
+    "total": "order total",
+    "days": "days"
   },
   "payment_methods": {
     "adyen": {

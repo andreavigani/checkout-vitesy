@@ -1,5 +1,5 @@
 <template>
-  <v-content
+  <v-main
     id="layout"
     :class="{ 'sm-and-up': $vuetify.breakpoint.smAndUp, 'md-and-up': $vuetify.breakpoint.mdAndUp }"
   >
@@ -31,7 +31,7 @@
         <v-flex xs12 md5 order-xs1 order-md2></v-flex>
       </v-layout>
     </v-container>
-  </v-content>
+  </v-main>
 </template>
 
 <script>
