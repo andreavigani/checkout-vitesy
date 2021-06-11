@@ -16,3 +16,68 @@ a {
   -webkit-transition: box-shadow 150ms ease !important;
   transition: box-shadow 150ms ease !important;
 }
+
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+  src: url('/assets/fonts/moderat/Moderat-Light.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('/assets/fonts/moderat/Moderat-Light.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/assets/fonts/moderat/Moderat-Light.eot'),
+    /* IE9 Compat Modes */
+    url('/assets/fonts/moderat/Moderat-Light.eot?#iefix') format('embedded-opentype');
+  /* IE6-IE8 */
+}
+
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: url('/assets/fonts/moderat/Moderat-Regular.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('/assets/fonts/moderat/Moderat-Regular.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/assets/fonts/moderat/Moderat-Regular.eot'),
+    /* IE9 Compat Modes */
+    url('/assets/fonts/moderat/Moderat-Regular.eot?#iefix') format('embedded-opentype');
+  /* IE6-IE8 */
+}
+
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+  src: url('/assets/fonts/moderat/Moderat-Medium.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('/assets/fonts/moderat/Moderat-Medium.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/assets/fonts/moderat/Moderat-Medium.eot'),
+    /* IE9 Compat Modes */
+    url('/assets/fonts/moderat/Moderat-Medium.eot?#iefix') format('embedded-opentype');
+  /* IE6-IE8 */
+}
+
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+  src: url('/assets/fonts/moderat/Moderat-Bold.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('/assets/fonts/moderat/Moderat-Bold.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/assets/fonts/moderat/Moderat-Bold.eot'),
+    /* IE9 Compat Modes */
+    url('/assets/fonts/moderat/Moderat-Bold.eot?#iefix') format('embedded-opentype');
+  /* IE6-IE8 */
+}
+
+body, .v-application {
+  text-rendering: optimizeLegibility;
+  font-family: 'Moderat', sans-serif;
+}

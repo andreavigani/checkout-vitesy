@@ -7,13 +7,12 @@
       edit-icon="done"
     >
       <div>
-        {{ $t('steps.customer.title') | capitalize }}
-        <span v-if="complete">
-          &mdash;
-          <a>{{ $t('generic.edit') }}</a>
-        </span>
+        <h2>{{ $t('steps.customer.title') | capitalize }}</h2>
+        <p>{{ $t('steps.customer.hint') | capitalize }}</p>
       </div>
-      <small>{{ $t('steps.customer.hint') | capitalize }}</small>
+      <span v-if="complete">
+        <a>{{ $t('generic.edit') | capitalize }}</a>
+      </span>
     </v-stepper-step>
 
     <v-stepper-content :step="step">

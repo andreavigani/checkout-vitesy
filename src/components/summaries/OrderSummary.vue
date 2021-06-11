@@ -165,10 +165,11 @@ export default {
 .order-summary {
   padding: 0.5rem;
   margin-bottom: 1rem;
+  border: 1px solid $v-border;
 }
 .order-summary-content {
   margin-top: 1rem;
-  border-top: 1px solid $v-border;
+  // border-top: 1px solid $v-border;
 
   .order-summary-header {
     margin: 1rem 0 2rem;

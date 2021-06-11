@@ -65,7 +65,7 @@ export default {
                 styles: {
                   input: {
                     'font-size': '16px',
-                    'font-family': 'Roboto, sans-serif'
+                    'font-family': 'Moderat, sans-serif'
                   },
                   'input.invalid': {
                     color: process.env.VUE_APP_ERROR_COLOR

@@ -2,13 +2,12 @@
   <div class="step-wrapper">
     <v-stepper-step :step="step" :complete="complete" :editable="complete" edit-icon="done">
       <div>
-        {{ $t('steps.delivery.title') | capitalize }}
-        <span v-if="complete">
-          &mdash;
-          <a>{{ $t('generic.edit') }}</a>
-        </span>
+        <h2>{{ $t('steps.delivery.title') | capitalize }}</h2>
+        <p>{{ $t('steps.delivery.hint') | capitalize }}</p>
       </div>
-      <small>{{ $t('steps.delivery.hint') | capitalize }}</small>
+      <span v-if="complete">
+        <a>{{ $t('generic.edit') | capitalize }}</a>
+      </span>
     </v-stepper-step>
 
     <v-stepper-content :step="step">

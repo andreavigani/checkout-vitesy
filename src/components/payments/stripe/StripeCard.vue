@@ -38,7 +38,7 @@ export default {
           style: {
             base: {
               fontSize: '16px',
-              fontFamily: 'Roboto, sans-serif'
+              fontFamily: 'Moderat, sans-serif'
             }
           }
         })

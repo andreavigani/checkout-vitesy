@@ -38,23 +38,40 @@ export default {
 </script>
 
 <style lang="scss">
+.v-sheet.v-stepper {
+  box-shadow: none!important;
+  padding: 0 1rem!important;
+}
 .v-subheader {
   padding: 0;
 }
 
 .step-summary {
   padding: 0 24px;
+  border-left: none!important;
 }
 
 .step-wrapper {
+  .v-stepper__step {
+    border-bottom: 1px solid $v-border;
+    padding-left: 0;
+    padding-right: 0;
+    &__step {
+      width: 36px;
+      height: 36px;
+      font-size: 1rem;
+    }
+  }
   .v-stepper__label {
-    small {
+    p, small {
       margin-top: 0.5rem;
+      color: rgba(0,0,0,0.6);
     }
   }
 
   .v-stepper__content {
     margin-left: -1px;
+    border-left: none!important;
   }
 }
 
@@ -66,6 +83,12 @@ export default {
       }
     }
   }
+}
+
+.v-stepper__step:not(.v-stepper__step--active):not(.v-stepper__step--complete):not(.v-stepper__step--error) .v-stepper__step__step {
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  color: rgba(0, 0, 0, 0.38);
+  background: none!important;
 }
 
 .sm-and-up {

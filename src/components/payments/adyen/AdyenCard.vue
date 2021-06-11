@@ -31,7 +31,7 @@ export default {
       return {
         base: {
           fontSize: '16px',
-          fontFamily: 'Roboto, sans-serif'
+          fontFamily: 'Moderat, sans-serif'
         },
         error: {
           color: process.env.VUE_APP_ERROR_COLOR

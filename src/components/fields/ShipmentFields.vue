@@ -60,13 +60,9 @@ export default {
       )
     },
     shippingMethodLabel (shippingMethod) {
-      const deliveryLeadTime = this.delivery_lead_times.map((dlt) => {
-        if (dlt.relationships.shipping_method.data.id === shippingMethod.id) {
-          return `${dlt.attributes.min_days}-${dlt.attributes.max_days} ${this.$t('order_summary.days')}`
-        }
-      })
-
-      return `${shippingMethod.name} - ${shippingMethod.formatted_price_amount_for_shipment} - ${deliveryLeadTime[0] || ''}`
+      const deliveryLeadTime = this.delivery_lead_times.find((dlt) => { return dlt.relationships.shipping_method.data.id === shippingMethod.id })
+      const formattedDeliveryLeadTime = `${deliveryLeadTime.attributes.min_days}-${deliveryLeadTime.attributes.max_days} ${this.$t('order_summary.days')}`
+      return `${shippingMethod.name} - ${shippingMethod.formatted_price_amount_for_shipment} - ${formattedDeliveryLeadTime || ''}`
     },
     handleChange (shippingMethod) {
       let payload = {

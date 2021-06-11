@@ -1,8 +1,10 @@
 <template>
   <div class="step-wrapper">
     <v-stepper-step :step="step">
-      {{ $t('steps.payment.title') | capitalize }}
-      <small>{{ $t('steps.payment.hint') | capitalize }}</small>
+      <div>
+        <h2>{{ $t('steps.payment.title') | capitalize }}</h2>
+        <p>{{ $t('steps.payment.hint') | capitalize }}</p>
+      </div>
     </v-stepper-step>
     <v-stepper-content :step="step">
       <v-radio-group v-model="selected_payment_option_component">

@@ -2,7 +2,7 @@
   <div :class="{subtotal: true, total: total}">
     <v-container>
       <v-layout row>
-        <v-flex xs6 offset-xs3>
+        <v-flex xs9>
           <div class="label">{{ $t(`order_summary.${label}`) | capitalize }}</div>
           <div class="hint" v-show="showHint">{{ hint }}</div>
         </v-flex>
@@ -65,7 +65,8 @@ export default {
   color: $SUCCESS_COLOR;
 }
 .subtotal {
-  border-top: 1px solid $v-border;
+  // border-top: 1px solid $v-border;
+  margin: .25rem 0;
 }
 .amount {
   text-align: right;
