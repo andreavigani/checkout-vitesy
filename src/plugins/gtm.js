@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueGtm from 'vue-gtm'
 import router from '@/router'
 
-Vue.use(VueGtm, {
+const gtm = {
   id: process.env.VUE_APP_GTM_CONTAINER_ID,
   queryParams: {
     gtm_auth: process.env.VUE_APP_GTM_AUTH,
@@ -14,4 +14,8 @@ Vue.use(VueGtm, {
   loadScript: process.env.VUE_APP_GTM_LOAD_SCRIPT === 'TRUE',
   vueRouter: router,
   ignoredViews: []
-})
+}
+
+Vue.use(VueGtm, gtm)
+
+export default gtm

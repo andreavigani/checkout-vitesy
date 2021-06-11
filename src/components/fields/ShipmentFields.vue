@@ -42,13 +42,13 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
       delivery_lead_times: []
     }
   },
   methods: {
-    async getDeliveryLeadTimes(){
+    async getDeliveryLeadTimes () {
       const response = await this.$store.dispatch('getDeliveryLeadTimes')
       this.delivery_lead_times = response.data || []
     },
@@ -59,9 +59,9 @@ export default {
         })
       )
     },
-    shippingMethodLabel(shippingMethod) {
+    shippingMethodLabel (shippingMethod) {
       const deliveryLeadTime = this.delivery_lead_times.map((dlt) => {
-        if (dlt.relationships.shipping_method.data.id === shippingMethod.id) { 
+        if (dlt.relationships.shipping_method.data.id === shippingMethod.id) {
           return `${dlt.attributes.min_days}-${dlt.attributes.max_days} ${this.$t('order_summary.days')}`
         }
       })

@@ -11,20 +11,20 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
-    "@vue/cli-service": "^3.9.3",
+    "@vue/cli-service": "^4.5.13",
     "axios": "^0.21.1",
-    "core-js": "^3.12.1",
+    "core-js": "^3.14.0",
     "json-api-normalize": "^1.1.5",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "nprogress": "^0.2.0",
-    "vue": "^2.6.12",
+    "vue": "^2.6.14",
     "vue-gtm": "^2.2.0",
     "vue-i18n": "^8.24.4",
     "vue-meta": "^2.4.0",
     "vue-router": "^3.5.1",
     "vuelidate": "^0.7.6",
-    "vuetify": "^2.5.0",
+    "vuetify": "^2.5.3",
     "vuex": "^3.6.2",
     "vuex-map-fields": "^1.4.1"
   },
@@ -49,7 +49,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "vue-cli-plugin-vuetify": "^0.5.0",
-    "vue-template-compiler": "^2.6.12",
-    "vuetify-loader": "^1.7.2"
+    "vue-template-compiler": "^2.6.14",
+    "vuetify-loader": "^1.7.2",
+    "webpack": "^4.46.0"
   }
 }
