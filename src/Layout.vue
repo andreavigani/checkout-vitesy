@@ -19,6 +19,7 @@
         </v-flex>
         <v-flex xs12 md5 order-xs1 order-md2>
           <OrderSummary />
+          <Help />
         </v-flex>
       </v-layout>
 
@@ -36,6 +37,7 @@
 
 <script>
 import OrderSummary from '@/components/summaries/OrderSummary.vue'
+import Help from '@/components/partials/Help.vue'
 import Footer from '@/components/partials/Footer.vue'
 
 export default {
@@ -48,6 +50,7 @@ export default {
   },
   components: {
     OrderSummary,
+    Help,
     Footer
   },
   metaInfo: {

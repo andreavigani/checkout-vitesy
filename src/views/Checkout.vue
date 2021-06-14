@@ -65,13 +65,20 @@ export default {
   .v-stepper__label {
     p, small {
       margin-top: 0.5rem;
-      color: rgba(0,0,0,0.6);
+      color: rgba(0,0,0,0.5)!important;
     }
   }
 
   .v-stepper__content {
-    margin-left: -1px;
     border-left: none!important;
+    margin: 0!important;
+    padding-left: 0!important;
+    padding-right: 0!important;
+  }
+
+  .v-btn {
+    border-radius: 0;
+    height: 50px!important;
   }
 }
 

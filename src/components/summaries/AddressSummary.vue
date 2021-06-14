@@ -2,9 +2,9 @@
   <v-layout wrap class="address body-2">
     <v-flex xs12>
       <v-layout>
-        <v-flex shrink>
+        <!-- <v-flex shrink>
           <v-icon :small="true">place</v-icon>
-        </v-flex>
+        </v-flex> -->
         <v-flex>
           <Address :address="address" :billing="billing" />
         </v-flex>

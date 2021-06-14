@@ -21,11 +21,15 @@
       <v-btn
         id="delivery-step-submit"
         color="primary"
+        elevation="0"
         @click="submit()"
         :block="isMobile"
         :disabled="disabled"
         :loading="buttons.loading_delivery"
-      >{{ submitLabel }}</v-btn>
+      >
+        {{ submitLabel }}
+        <v-icon right dark>mdi-arrow-right</v-icon>
+      </v-btn>
 
       <div
         class="order-error"

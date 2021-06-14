@@ -2,7 +2,7 @@
   <div class="gift-card-or-coupon-field">
     <v-container>
       <v-layout row>
-        <v-flex xs9 offset-xs3>
+        <v-flex xs12>
           <v-text-field
             id="gift-card-or-coupon-code"
             :label="$t('order_summary.gift_card_or_coupon_code')"

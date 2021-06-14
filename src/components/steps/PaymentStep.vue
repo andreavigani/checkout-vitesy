@@ -20,11 +20,14 @@
         color="primary"
         :block="isMobile"
         :disabled="disabled"
+        elevation="0"
         min-width="50%"
         id="payment-step-submit"
         :loading="buttons.loading_payment"
-        >{{ $t('buttons.place_order') }}</v-btn
-      >
+        >
+          {{ $t('buttons.place_order') }}
+          <v-icon right dark>mdi-arrow-right</v-icon>
+        </v-btn>
 
       <div
         class="order-error"

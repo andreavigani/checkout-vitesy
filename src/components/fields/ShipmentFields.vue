@@ -1,6 +1,6 @@
 <template>
   <div class="shipment">
-    <ShipmentSummary :shipment="shipment" :count="count" :total="total" :editable="true" />
+    <!-- <ShipmentSummary :shipment="shipment" :count="count" :total="total" :editable="true" /> -->
     <v-radio-group :value="shippingMethodId">
       <v-radio
         class="available-shipping-method"
@@ -17,16 +17,16 @@
 
 <script>
 import _ from 'lodash'
-import ShipmentSummary from '@/components/summaries/ShipmentSummary'
+// import ShipmentSummary from '@/components/summaries/ShipmentSummary'
 
 import { mapState } from 'vuex'
 import { mapFields } from 'vuex-map-fields'
 import { stepMixin } from '@/mixins/stepMixin'
 
 export default {
-  components: {
-    ShipmentSummary
-  },
+  // components: {
+  //   ShipmentSummary
+  // },
   mixins: [stepMixin],
   props: {
     shipment: {

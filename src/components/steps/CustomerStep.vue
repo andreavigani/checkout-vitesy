@@ -24,13 +24,15 @@
       <v-btn
         id="customer-step-submit"
         color="primary"
+        elevation="0"
         @click="submit()"
         :block="isMobile"
         :disabled="disabled"
         :loading="loading_customer"
-        >{{ submitLabel }}</v-btn
-      >
-
+        >
+          {{ submitLabel }}
+          <v-icon right dark>mdi-arrow-right</v-icon>
+        </v-btn>
       <div
         class="order-error"
         id="set-addresses-error"
@@ -43,14 +45,17 @@
     <div class="step-summary" v-if="complete">
       <v-container>
         <v-layout row wrap>
+          <v-flex xs12>
+              <div class="header">{{ order.customer_email }}</div>
+          </v-flex>
           <v-flex xs12 sm6>
-            <div class="header">{{ order.customer_email }}</div>
+            <div class="header">{{ $t('generic.billing_address') | capitalize }}:</div>
             <div class="billing-address-summary">
               <AddressSummary :address="order.billing_address" />
             </div>
           </v-flex>
           <v-flex xs12 sm6>
-            <div class="header">{{ $t('generic.ship_to') | capitalize }}:</div>
+            <div class="header">{{ $t('generic.shipping_address') | capitalize }}:</div>
             <div class="shipping-address-summary">
               <AddressSummary
                 :address="order.shipping_address"

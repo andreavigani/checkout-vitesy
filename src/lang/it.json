@@ -57,7 +57,29 @@
     "total": "totale ordine",
     "days": "giorni"
   },
+  "help": {
+    "title": "Hai bisogno di aiuto?",
+    "links": [
+      {
+        "url": "https://vitesy.com/",
+        "text": "Spedizione"
+      },
+      {
+        "url": "https://vitesy.com/",
+        "text": "Resi e Rimborsi"
+      },
+      {
+        "url": "https://vitesy.com/",
+        "text": "Ordinare e Pagare"
+      },
+      {
+        "url": "https://vitesy.com/",
+        "text": "Promozioni e Coupon"
+      }
+    ]
+  },
   "payment_methods": {
+    "title": "Metodi di pagamento accettati",
     "adyen": {
       "title": "carta di credito"
     },

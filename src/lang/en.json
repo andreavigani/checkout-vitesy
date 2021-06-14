@@ -57,7 +57,29 @@
     "total": "order total",
     "days": "days"
   },
+  "help": {
+    "title": "Need help?",
+    "links": [
+      {
+        "url": "https://vitesy.com/",
+        "text": "Delivery"
+      },
+      {
+        "url": "https://vitesy.com/",
+        "text": "Return & Refund"
+      },
+      {
+        "url": "https://vitesy.com/",
+        "text": "Ordering & Payment"
+      },
+      {
+        "url": "https://vitesy.com/",
+        "text": "Promotions & Vouchers"
+      }
+    ]
+  },
   "payment_methods": {
+    "title": "Accepted Payment Methods",
     "adyen": {
       "title": "credit card"
     },
