@@ -46,13 +46,15 @@ export default {
   padding: 0;
 }
 
-.step-summary {
-  padding: 0 24px;
-  border-left: none!important;
+.v-stepper .step-wrapper:first-of-type .v-stepper__step {
+  margin-top: 0;
+  border-top: none;
 }
 
 .step-wrapper {
   .v-stepper__step {
+    border-top: 1px solid $v-border;
+    margin-top: 2rem;
     border-bottom: 1px solid $v-border;
     padding-left: 0;
     padding-right: 0;
@@ -63,6 +65,10 @@ export default {
     }
   }
   .v-stepper__label {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
     p, small {
       margin-top: 0.5rem;
       color: rgba(0,0,0,0.5)!important;
@@ -104,12 +110,12 @@ export default {
   }
 
   .step-summary {
-    margin-top: 16px;
-    margin-left: 36px;
-    padding-left: 24px;
-    padding-bottom: 16px;
-    border-left: 1px solid $v-border;
-    border-bottom: 0;
+    // margin-top: 16px;
+    // margin-left: 36px;
+    // padding-left: 24px;
+    // padding-bottom: 16px;
+    // border-left: 1px solid $v-border;
+    // border-bottom: 0;
   }
 
   .step-wrapper {
@@ -129,6 +135,14 @@ export default {
         margin-bottom: 0;
       }
     }
+  }
+}
+
+.v-radio {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 1rem;
+  &:hover, &.v-item--active {
+    border: 1px solid $PRIMARY_COLOR;
   }
 }
 </style>

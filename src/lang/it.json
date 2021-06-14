@@ -28,6 +28,7 @@
     "customer_subscription_disabled": "Sei già iscritto alla newsletter",
     "edit": "modifica",
     "free_over": "gratuita sopra",
+    "free": "Gratuita",
     "item": "articolo | articoli",
     "new_address": "Nuovo indirizzo",
     "of": "di",
@@ -40,7 +41,8 @@
     "ship_to": "Spedisci a",
     "terms_of_service": "condizioni di vendita",
     "thankyou": "Grazie",
-    "thankyou_message": "Il tuo ordine è confermato"
+    "thankyou_message": "Il tuo ordine è confermato",
+    "copyright": "Laboratori Fabrici S.r.l. | Piazzetta Ado Furlan, 4 - 33170 - Pordenone (PN) - Italia | N.REA PN 104531 | P.IVA: IT01786900934 | Capitale sociale € 4.325,00"
   },
   "order_summary": {
     "gift_card_or_coupon_code": "Hai una gift card o un coupon?",
@@ -55,6 +57,8 @@
     "gift_card": "gift card",
     "title": "riepilogo ordine",
     "total": "totale ordine",
+    "within": "entro",
+    "day": "giorno",
     "days": "giorni"
   },
   "help": {
@@ -76,7 +80,9 @@
         "url": "https://vitesy.com/",
         "text": "Promozioni e Coupon"
       }
-    ]
+    ],
+    "contact": "<a target='_blank' class='black--text' href='https://vitesy.com/it/contatti'>Domande? Chiedi ai nostri operatori</a>",
+    "hours": "Lun - Ven: 9:00 - 18:00"
   },
   "payment_methods": {
     "title": "Metodi di pagamento accettati",

@@ -39,7 +39,17 @@
       >{{ errors.place_order }}</div>
     </v-stepper-content>
 
-    <div class="step-summary" v-if="complete">
+    <div class="step-summary" :step="step" v-if="complete">
+      <ShipmentFields
+        v-for="(shipment, index) in shipments"
+        :shipment="shipment"
+        :key="shipment.id"
+        :count="index+1"
+        :total="shipments.length"
+        :selectedOnly="true"
+      />
+    </div>
+    <!-- <div class="step-summary" v-if="complete">
       <ShipmentSummary
         v-for="(shipment, index) in shipments"
         :shipment="shipment"
@@ -48,7 +58,7 @@
         :total="shipments.length"
         :editable="false"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -57,12 +67,12 @@ import { stepMixin } from '@/mixins/stepMixin'
 import { mapMultiRowFields } from 'vuex-map-fields'
 import { mapState } from 'vuex'
 import ShipmentFields from '@/components/fields/ShipmentFields'
-import ShipmentSummary from '@/components/summaries/ShipmentSummary'
+// import ShipmentSummary from '@/components/summaries/ShipmentSummary'
 
 export default {
   components: {
-    ShipmentFields,
-    ShipmentSummary
+    ShipmentFields
+    // ShipmentSummary
   },
   mixins: [stepMixin],
   computed: {

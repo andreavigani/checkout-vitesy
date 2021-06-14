@@ -28,6 +28,7 @@
     "customer_subscription_disabled": "You are already subscribed to the newsletter",
     "edit": "edit",
     "free_over": "free over",
+    "free": "Free",
     "item": "item | items",
     "new_address": "New address",
     "of": "of",
@@ -40,7 +41,8 @@
     "ship_to": "Ship to",
     "terms_of_service": "terms of service",
     "thankyou": "Thank you",
-    "thankyou_message": "Your order is confirmed"
+    "thankyou_message": "Your order is confirmed",
+    "copyright": "Laboratori Fabrici S.r.l. | Piazzetta Ado Furlan, 4 - 33170 - Pordenone (PN) - Italy | N.REA PN 104531 | P.IVA: IT01786900934 | Share capital € 4.325,00"
   },
   "order_summary": {
     "gift_card_or_coupon_code": "Have a gift card or coupon?",
@@ -55,6 +57,8 @@
     "gift_card": "gift card",
     "title": "order summary",
     "total": "order total",
+    "within": "within",
+    "day": "day",
     "days": "days"
   },
   "help": {
@@ -76,7 +80,9 @@
         "url": "https://vitesy.com/",
         "text": "Promotions & Vouchers"
       }
-    ]
+    ],
+    "contact": "<a class='black--text' target='_blank' href='https://vitesy.com/contact'>Questions? Ask to our operators</a>",
+    "hours": "Mon to Fri: 9am - 6pm"
   },
   "payment_methods": {
     "title": "Accepted Payment Methods",

@@ -132,6 +132,11 @@ export default {
 <style lang="scss">
 .payment-method {
   margin-bottom: 1rem;
+  .v-label {
+    font-weight: 600;
+    color: #000;
+    font-size: 1.25rem;
+  }
 
   .payment-method-fields {
     background-color: #fafafa;
@@ -163,4 +168,5 @@ export default {
     padding: 2rem 2rem 1rem;
   }
 }
+
 </style>

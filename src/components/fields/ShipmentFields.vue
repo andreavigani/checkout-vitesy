@@ -2,15 +2,27 @@
   <div class="shipment">
     <!-- <ShipmentSummary :shipment="shipment" :count="count" :total="total" :editable="true" /> -->
     <v-radio-group :value="shippingMethodId">
-      <v-radio
-        class="available-shipping-method"
-        v-for="shipping_method in sortedAvailableShippingMethods"
-        :key="shipping_method.id"
-        :label="shippingMethodLabel(shipping_method)"
-        :value="shipping_method.id"
-        color="primary"
-        @change="handleChange(shipping_method)"
-      ></v-radio>
+      <template  v-for="shipping_method in sortedAvailableShippingMethods">
+        <v-radio
+          class="available-shipping-method"
+          v-if="!selectedOnly || shippingMethodId === shipping_method.id"
+          :key="shipping_method.id"
+          :value="shipping_method.id"
+          color="primary"
+          @change="handleChange(shipping_method)"
+        >
+          <template slot="label">
+            <div class="shipping_method_label">
+              <div class="shipping_method_label__content">
+                <h3>{{ $t('order_summary.within') | capitalize }} {{ shippingMethodLabel(shipping_method).min_days }} - {{ shippingMethodLabel(shipping_method).max_days }} {{ $t('order_summary.days') }}</h3>
+                <v-icon left light>mdi-truck</v-icon>
+                {{ shippingMethodLabel(shipping_method).name }}
+              </div>
+              <div>{{ shippingMethodLabel(shipping_method).price }}</div>
+            </div>
+          </template>
+        </v-radio>
+      </template>
     </v-radio-group>
   </div>
 </template>
@@ -40,6 +52,10 @@ export default {
     total: {
       type: Number,
       required: true
+    },
+    selectedOnly: {
+      type: Boolean,
+      required: false
     }
   },
   data () {
@@ -61,8 +77,14 @@ export default {
     },
     shippingMethodLabel (shippingMethod) {
       const deliveryLeadTime = this.delivery_lead_times.find((dlt) => { return dlt.relationships.shipping_method.data.id === shippingMethod.id })
-      const formattedDeliveryLeadTime = `${deliveryLeadTime.attributes.min_days}-${deliveryLeadTime.attributes.max_days} ${this.$t('order_summary.days')}`
-      return `${shippingMethod.name} - ${shippingMethod.formatted_price_amount_for_shipment} - ${formattedDeliveryLeadTime || ''}`
+      // const formattedDeliveryLeadTime = `${deliveryLeadTime.attributes.min_days}-${deliveryLeadTime.attributes.max_days} ${this.$t('order_summary.days')}`
+      // return `${shippingMethod.name} - ${shippingMethod.formatted_price_amount_for_shipment} - ${formattedDeliveryLeadTime || ''}`
+      return {
+        name: shippingMethod.name,
+        price: parseInt(shippingMethod.price_amount_for_shipment_cents) > 0 ? shippingMethod.formatted_price_amount_for_shipment : this.$t('generic.free'),
+        min_days: deliveryLeadTime.attributes.min_days,
+        max_days: deliveryLeadTime.attributes.max_days
+      }
     },
     handleChange (shippingMethod) {
       let payload = {
@@ -100,5 +122,18 @@ export default {
 <style lang="scss">
 .shipment-header {
   margin-bottom: 0.5rem;
+}
+.shipping_method_label {
+  display: inline-flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-between;
+  color: #000;
+  .shipping_method_label__content {
+    margin-left: .5rem;
+  }
+  h3 {
+    margin-bottom: .75rem;
+  }
 }
 </style>
