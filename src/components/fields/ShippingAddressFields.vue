@@ -177,6 +177,8 @@ export default {
   mounted () {
     if (this.shippingCountryCodeLocked) {
       this.country_code = this.shipping_country_code_lock
+    } else {
+      this.country_code = this.$route.query.country
     }
   }
 }

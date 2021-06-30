@@ -16,7 +16,7 @@
               <div class="shipping_method_label__content">
                 <h3>{{ $t('order_summary.within') | capitalize }} {{ shippingMethodLabel(shipping_method).min_days }} - {{ shippingMethodLabel(shipping_method).max_days }} {{ $t('order_summary.days') }}</h3>
                 <v-icon left light>mdi-truck</v-icon>
-                {{ shippingMethodLabel(shipping_method).name }}
+                {{ $i18n.locale === 'it' ? $t('order_summary.shipping') : '' | capitalize }} {{ shippingMethodLabel(shipping_method).name }} {{ $i18n.locale !== 'it' ? $t('order_summary.shipping') : '' | capitalize }}
               </div>
               <div>{{ shippingMethodLabel(shipping_method).price }}</div>
             </div>

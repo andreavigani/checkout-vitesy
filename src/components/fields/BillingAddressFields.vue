@@ -176,6 +176,7 @@ export default {
     }
   },
   mounted () {
+    this.country_code = this.$route.query.country
     this.updateShipToDifferentAddressRequired()
   }
 }
