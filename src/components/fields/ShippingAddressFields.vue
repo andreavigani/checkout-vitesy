@@ -172,6 +172,49 @@ export default {
     },
     handleChange () {
       this.updateAddressInvalid()
+      if (this.ship_to_different_address) {
+        setTimeout(() => {
+          this.autocomplete('shipping-address-line-1')
+        }, 1000)
+      }
+    },
+    autocomplete (inputId) {
+      const input = document.getElementById(inputId)
+      this.autocomplete[inputId] = new window.google.maps.places.Autocomplete(input)
+      this.autocomplete[inputId].addListener('place_changed', () => {
+        const response = this.autocomplete[inputId].getPlace()
+        let addressNumber = ''
+        let addressRoute = ''
+        let state1
+        let state2
+        response.address_components.forEach((a) => {
+          switch (a.types[0]) {
+            case 'street_number':
+              addressNumber = ' ' + a.long_name
+              break
+            case 'route':
+              addressRoute = a.long_name
+              break
+            case 'administrative_area_level_1':
+              state1 = a.short_name
+              break
+            case 'administrative_area_level_2':
+              state2 = a.short_name
+              break
+            case 'locality':
+              this.city = a.long_name
+              break
+            case 'country':
+              this.country_code = a.short_name
+              break
+            case 'postal_code':
+              this.zip_code = a.long_name
+              break
+          }
+          this.state_code = state2 && state2.length < 3 ? state2 : state1
+          this.line_1 = addressRoute + addressNumber
+        })
+      })
     }
   },
   mounted () {

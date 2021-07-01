@@ -81,3 +81,19 @@ body, .v-application {
   text-rendering: optimizeLegibility;
   font-family: 'Moderat', sans-serif;
 }
+
+.v-text-field {
+  .v-input__slot {
+    border: 1px solid $v-border;
+    padding: 1rem 1.25rem 1rem 1.25rem;
+  }
+  &.v-input--is-label-active,
+  &.v-input--is-focused {
+    .v-input__slot {
+      padding: 1.5rem 1.25rem .5rem 1.25rem;
+    }
+  }
+} 
+.theme--light.v-text-field>.v-input__control>.v-input__slot:before {
+  border-color: $v-border;
+}
