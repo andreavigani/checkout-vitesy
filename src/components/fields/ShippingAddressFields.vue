@@ -49,6 +49,7 @@
             id="shipping-address-line-1"
             :label="inputLabel('line_1')"
             v-model="line_1"
+            placeholder=""
             :error-messages="errorMessages('line_1')"
             @input="handleInput()"
             @blur="handleBlur('line_1')"
@@ -142,7 +143,8 @@ export default {
   mixins: [addressMixin],
   data () {
     return {
-      billing: false
+      billing: false,
+      queryCountryCode: false
     }
   },
   computed: {
@@ -180,7 +182,11 @@ export default {
     },
     autocomplete (inputId) {
       const input = document.getElementById(inputId)
-      this.autocomplete[inputId] = new window.google.maps.places.Autocomplete(input)
+      let options = {}
+      if (this.shippingCountryCodeLocked) {
+        options = { componentRestrictions: { country: this.shipping_country_code_lock } }
+      }
+      this.autocomplete[inputId] = new window.google.maps.places.Autocomplete(input, options)
       this.autocomplete[inputId].addListener('place_changed', () => {
         const response = this.autocomplete[inputId].getPlace()
         let addressNumber = ''
@@ -220,8 +226,6 @@ export default {
   mounted () {
     if (this.shippingCountryCodeLocked) {
       this.country_code = this.shipping_country_code_lock
-    } else {
-      this.country_code = this.$route.query.country
     }
   }
 }

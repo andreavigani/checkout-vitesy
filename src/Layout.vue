@@ -7,10 +7,10 @@
       <v-layout wrap>
         <v-flex xs12 md12 order-xs2 order-md1>
           <v-row class="header">
-            <v-col cols="12" md="6">
+            <v-col cols="12" md="5">
               <v-img :src="logoUrl" :width="logoWidth" max-width="140" />
             </v-col>
-            <v-col  cols="12" md="3" class="text-md-right">
+            <v-col  cols="12" md="4" class="text-md-right">
               <v-icon left light>mdi-face-agent</v-icon> <span v-html="$t('help.contact')"></span>
             </v-col>
             <v-col cols="12" md="3" class="text-md-right">

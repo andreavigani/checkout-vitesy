@@ -144,6 +144,9 @@ import { addressMixin } from '@/mixins/addressMixin'
 import { mapFields } from 'vuex-map-fields'
 
 export default {
+  // data () {
+  //   return { queryCountryCode: false }
+  // },
   mixins: [addressMixin],
   computed: {
     ...mapFields([
@@ -177,6 +180,7 @@ export default {
     },
     autocomplete (inputId) {
       const input = document.getElementById(inputId)
+      // const options = { componentRestrictions: { country: this.queryCountryCode } }
       this.autocomplete[inputId] = new window.google.maps.places.Autocomplete(input)
       this.autocomplete[inputId].addListener('place_changed', () => {
         const response = this.autocomplete[inputId].getPlace()
@@ -215,7 +219,8 @@ export default {
     }
   },
   mounted () {
-    this.country_code = this.$route.query.country
+    // this.queryCountryCode = this.$route.query.country
+    // this.country_code = this.queryCountryCode
     this.updateShipToDifferentAddressRequired()
     this.autocomplete('billing-address-line-1')
   }
