@@ -80,7 +80,7 @@ export default {
       // const formattedDeliveryLeadTime = `${deliveryLeadTime.attributes.min_days}-${deliveryLeadTime.attributes.max_days} ${this.$t('order_summary.days')}`
       // return `${shippingMethod.name} - ${shippingMethod.formatted_price_amount_for_shipment} - ${formattedDeliveryLeadTime || ''}`
       return {
-        name: shippingMethod.name,
+        name: shippingMethod.name.substr(0, shippingMethod.name.indexOf('-')),
         price: parseInt(shippingMethod.price_amount_for_shipment_cents) > 0 ? shippingMethod.formatted_price_amount_for_shipment : this.$t('generic.free'),
         min_days: deliveryLeadTime.attributes.min_days,
         max_days: deliveryLeadTime.attributes.max_days
