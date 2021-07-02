@@ -1,5 +1,5 @@
 <template>
-  <div class="order-help">
+  <div class="order-help px-lg-8">
     <h2 class="order-help-title">
       {{ $t('help.title') | capitalize }}
     </h2>

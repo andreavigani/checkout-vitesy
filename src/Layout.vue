@@ -27,13 +27,14 @@
         </v-flex>
         <v-flex xs12 md5 order-xs1 order-md2>
           <OrderSummary />
-          <Help />
+          <Help class="d-none d-lg-block" />
         </v-flex>
       </v-layout>
 
       <v-layout wrap>
         <v-flex xs12 md7 order-xs2 order-md1>
           <v-row justify="center" class="header">
+            <Help class="d-block d-lg-none"/>
             <Footer />
           </v-row>
         </v-flex>
