@@ -12,6 +12,26 @@
     </v-radio-group>
 
     <v-layout row wrap v-if="showBillingAddress">
+      <v-flex xs12 px-2 v-if="order.requires_billing_info">
+        <v-text-field
+          id="billing-address-billing-info"
+          :label="inputLabel('billing_info')"
+          v-model="billing_info"
+          :error-messages="errorMessages('billing_info')"
+          @input="handleInput()"
+          @change="validateVAT"
+          @keyup.enter="validateVAT"
+          @blur="handleBlur('billing_info')"
+        ></v-text-field>
+        <v-text-field
+          id="billing-address-company"
+          :label="inputLabel('company')"
+          v-model="company"
+          :error-messages="errorMessages('company')"
+          @input="handleInput()"
+          @blur="handleBlur('company')"
+        ></v-text-field>
+      </v-flex>
       <v-flex xs6 px-2>
         <v-text-field
           id="billing-address-first-name"
@@ -108,24 +128,6 @@
           @blur="handleBlur('phone')"
         ></v-text-field>
       </v-flex>
-      <v-flex xs12 px-2 v-if="order.requires_billing_info">
-        <v-text-field
-          id="billing-address-billing-info"
-          :label="inputLabel('billing_info')"
-          v-model="billing_info"
-          :error-messages="errorMessages('billing_info')"
-          @input="handleInput()"
-          @blur="handleBlur('billing_info')"
-        ></v-text-field>
-        <v-text-field
-          id="billing-address-company"
-          :label="inputLabel('company')"
-          v-model="company"
-          :error-messages="errorMessages('company')"
-          @input="handleInput()"
-          @blur="handleBlur('company')"
-        ></v-text-field>
-      </v-flex>
       <v-flex xs12 px-2 v-if="showAddressBook">
         <v-checkbox
           :label="$t('generic.save_to_address_book')"
@@ -144,9 +146,6 @@ import { addressMixin } from '@/mixins/addressMixin'
 import { mapFields } from 'vuex-map-fields'
 
 export default {
-  // data () {
-  //   return { queryCountryCode: false }
-  // },
   mixins: [addressMixin],
   computed: {
     ...mapFields([
@@ -168,6 +167,20 @@ export default {
     ])
   },
   methods: {
+    validateVAT () {
+      return fetch(`https://gwapi.vitesy.com/api/b2b/validatevat/${this.billing_info}`).then((res) => { return res.json() })
+        .then((data) => {
+          const validatedVAT = JSON.parse(data)
+          console.log(validatedVAT)
+          if (validatedVAT.data.valid) {
+            this.company = validatedVAT.data.company.company_name || this.company
+            this.country_code = validatedVAT.data.company.country_code || this.country_code
+          } else {
+            this.billing_info = ''
+          }
+        })
+        .catch((err) => { console.log(err) })
+    },
     updateAddressInvalid () {
       this.invalid_billing_address = this.$v.$invalid
     },
@@ -219,8 +232,6 @@ export default {
     }
   },
   mounted () {
-    // this.queryCountryCode = this.$route.query.country
-    // this.country_code = this.queryCountryCode
     this.updateShipToDifferentAddressRequired()
     this.autocomplete('billing-address-line-1')
   }
