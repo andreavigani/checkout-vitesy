@@ -4,8 +4,20 @@
       {{ $t('help.title') | capitalize }}
     </h2>
     <ul class="order-help-nav">
-      <li v-for="(link, index) in links" :key="`l-${index}`">
-        <a :href="link.url" target="_blank">{{ link.text }}</a>
+      <li v-for="(faq, index) in faqs" :key="`l-${index}`">
+        <v-dialog v-model="dialog" width="800" >
+          <template v-slot:activator="{ on, attrs }">
+            <v-link v-bind="attrs" v-on="on">{{ faq.title }}</v-link>
+          </template>
+          <v-card>
+            <v-card-title class="text-h5">
+              {{ faq.title }}
+            </v-card-title>
+            <v-card-text>
+              <div v-html="faq.content"></div>
+            </v-card-text>
+          </v-card>
+        </v-dialog>
       </li>
     </ul>
     <br>
@@ -23,8 +35,8 @@ export default {
     return {}
   },
   computed: {
-    links () {
-      return this.$t('help.links')
+    faqs () {
+      return this.$t('help.faq')
     }
   },
   methods: {},

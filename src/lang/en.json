@@ -63,22 +63,22 @@
   },
   "help": {
     "title": "Need help?",
-    "links": [
+    "faq": [
       {
-        "url": "https://vitesy.com/",
-        "text": "Delivery"
+        "title": "Delivery",
+        "content": "<b>ITALY</b>:<br>1-2 business days with standard shipping<br><br><b>EU - WEST</b>:<br>Austria, Belgium, Denmark, Finland, France, Germany, Greece, Ireland, Luxembourg, Malta, Netherlands, Portugal, Spain, Sweden<br>2-4 business days with standard shipping<br>1-2 business days with express shipping<br><br><b>EU - EAST</b>:Croatia, Cyprus, Czech Republic, Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Romania, Slovakia, Slovenia<br>2-4 business days with standard shipping<br>1-2 business days with express shipping<br><br><b>EXTRA UE EUROPE</b>:<br>Andorra, Great Britain, Iceland, Liechtenstein, Monaco, Norway, San Marino, Switzerland<br>4-8 business days with standard shipping<br>3-5 business days with express shipping<br><br><b>NORTH AMERICA</b>:<br>Canada, United States<br>4-8 business days with standard shipping<br>3-5 business days with express shipping"
       },
       {
-        "url": "https://vitesy.com/",
-        "text": "Return & Refund"
+        "title": "Shipping Costs",
+        "content": "<b>Standard delivery</b><br>Free for all countries<br><br><b>Express shipping</b><br><b>EU - WEST: €15</b><br>Austria, Belgium, Denmark, Finland, France, Germany, Greece, Ireland, Italy, Luxembourg, Malta, Netherlands, Portugal, Spain, Sweden<br><br><b>EU - EAST: €40</b><br>Croatia, Cyprus, Czech Republic, Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Romania, Slovakia, Slovenia<br><br><b>EXTRA UE EUROPE: €40</b><br>Andorra, Iceland, Liechtenstein, Monaco, Norway, San Marino, Switzerland<br><br><b>GREAT BRITAIN: £30</b><br><br><b>NORTH AMERICA: $40</b><br>Canada, United States"
       },
       {
-        "url": "https://vitesy.com/",
-        "text": "Ordering & Payment"
+        "title": "Return & Refund",
+        "content": "If you don't like your order or you changed your mind once you have received it, you can return it within 14 days from the delivery date.<br><br>You just need to contact us, but we are sure you will love our products!"
       },
       {
-        "url": "https://vitesy.com/",
-        "text": "Promotions & Vouchers"
+        "title": "Taxes and customs",
+        "content": "Note for the customers outside the European Union: any local tax (e.g. VAT/GST) and customs charges are not included and are at the recipient's expense."
       }
     ],
     "contact": "<a class='black--text' target='_blank' href='https://vitesy.com/contact'>Questions? Ask to our operators</a>",

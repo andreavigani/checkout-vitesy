@@ -63,22 +63,22 @@
   },
   "help": {
     "title": "Hai bisogno di aiuto?",
-    "links": [
+    "faq": [
       {
-        "url": "https://vitesy.com/",
-        "text": "Spedizione"
+        "title": "Tempi di spedizione",
+        "content": "<b>ITALIA</b>:<br>1-2 giorni lavorativi con la spedizione standard<br><br><b>EU - OVEST</b>:<br>Austria, Belgio, Danimarca, Finlandia, Francia, Germania, Grecia, Irlanda, Lussemburgo, Malta, Paesi Bassi, Portogallo, Spagna, Svezia<br>2-4 giorni lavorativi con la spedizione standardbr>1-2  giorni lavorativi con la spedizione express<br><br><b>EU - EST</b>:Cipro, Croazia, Estonia, Lettonia, Lituania, Malta, Polonia, Repubblica Ceca, Romania, Slovacchia, Slovenia, Ungheria<br>2-4 giorni lavorativi con la spedizione standardbr>1-2  giorni lavorativi con la spedizione express<br><br><b>EUROPA EXTRA EU</b>:<br>Andorra, Gran Bretagna, Islanda, Liechtenstein, Monaco, Norvegia, San Marino, Svizzera<br>4-8 giorni lavorativi con la spedizione standardbr>3-5  giorni lavorativi con la spedizione express<br><br><b>NORD AMERICA</b>:<br>Canada, Stati Uniti<br>4-8 giorni lavorativi con la spedizione standardbr>3-5  giorni lavorativi con la spedizione express"
       },
       {
-        "url": "https://vitesy.com/",
-        "text": "Resi e Rimborsi"
+        "title": "Spese di spedizione",
+        "content": "<b>Spedizione Standard</b><br>Gratis per tutti i paesi<br><br><b>Spedizione Express</b><br><b>EU - OVEST: €15</b><br>Austria, Belgio, Danimarca, Finlandia, Francia, Germania, Grecia, Irlanda, Italia, Lussemburgo, Paesi Bassi, Portogallo, Spagna, Svezia, Malta<br><br><b>EU - EST: €40</b><br>Cipro, Croazia, Estonia, Ungheria, Lettonia, Lituania, Malta, Polonia, Repubblica Ceca, Romania, Slovacchia, Slovenia<br><br><b>EUROPA EXTRA UE: €40</b><br>Islanda, Liechtenstein, Svizzera, Norvegia, Andorra, Monaco, San Marino<br><br><b>GRAN BRETAGNA: £30</b><br><br><b>NORD AMERICA: $40</b><br>Canada, Stati Uniti"
       },
       {
-        "url": "https://vitesy.com/",
-        "text": "Ordinare e Pagare"
+        "title": "Resi e rimborsi",
+        "content": "Se una volta ricevuto il tuo ordine non è di tuo gradimento o hai cambiato idea, puoi effettuare il reso entro 14 giorni dalla data di consegna.<br>Ti basterà contattarci, ma siamo sicuri che amerai i nostri prodotti!"
       },
       {
-        "url": "https://vitesy.com/",
-        "text": "Promozioni e Coupon"
+        "title": "Tasse e dogana",
+        "content": "Nota per clienti extra UE: eventuali tasse locali (es. IVA) ed oneri doganali non sono inclusi e sono a carico del destinatario."
       }
     ],
     "contact": "<a target='_blank' class='black--text' href='https://vitesy.com/it/contatti'>Domande? Chiedi ai nostri operatori</a>",
