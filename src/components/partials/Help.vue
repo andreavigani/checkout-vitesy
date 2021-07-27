@@ -7,7 +7,7 @@
       <li v-for="(faq, index) in faqs" :key="`l-${index}`">
         <v-dialog v-model="dialog" width="800" >
           <template v-slot:activator="{ on, attrs }">
-            <v-link v-bind="attrs" v-on="on">{{ faq.title }}</v-link>
+            <v-link name="faq" v-bind="attrs" v-on="on">{{ faq.title }}</v-link>
           </template>
           <v-card>
             <v-card-title class="text-h5">
@@ -32,7 +32,9 @@
 <script>
 export default {
   data () {
-    return {}
+    return {
+      dialog: false
+    }
   },
   computed: {
     faqs () {

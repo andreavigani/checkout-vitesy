@@ -14,7 +14,7 @@
           <template slot="label">
             <div class="shipping_method_label">
               <div class="shipping_method_label__content">
-                <h3>{{ $t('order_summary.within') | capitalize }} {{ shippingMethodLabel(shipping_method).min_days }} - {{ shippingMethodLabel(shipping_method).max_days }} {{ $t('order_summary.days') }}</h3>
+                <h3 v-if="dlt">{{ $t('order_summary.within') | capitalize }} {{ shippingMethodLabel(shipping_method).min_days }} - {{ shippingMethodLabel(shipping_method).max_days }} {{ $t('order_summary.days') }}</h3>
                 <v-icon left light>mdi-truck</v-icon>
                 {{ $i18n.locale === 'it' ? $t('order_summary.shipping') : '' | capitalize }} {{ shippingMethodLabel(shipping_method).name }} {{ $i18n.locale !== 'it' ? $t('order_summary.shipping') : '' | capitalize }}
               </div>
@@ -60,7 +60,8 @@ export default {
   },
   data () {
     return {
-      delivery_lead_times: []
+      delivery_lead_times: [],
+      dlt: false
     }
   },
   methods: {
@@ -79,11 +80,16 @@ export default {
       const deliveryLeadTime = this.delivery_lead_times.find((dlt) => { return dlt.relationships.shipping_method.data.id === shippingMethod.id })
       // const formattedDeliveryLeadTime = `${deliveryLeadTime.attributes.min_days}-${deliveryLeadTime.attributes.max_days} ${this.$t('order_summary.days')}`
       // return `${shippingMethod.name} - ${shippingMethod.formatted_price_amount_for_shipment} - ${formattedDeliveryLeadTime || ''}`
+      if (deliveryLeadTime) {
+        this.dlt = true
+      } else {
+        this.dlt = false
+      }
       return {
         name: shippingMethod.name.substr(0, shippingMethod.name.indexOf('-')),
         price: parseInt(shippingMethod.price_amount_for_shipment_cents) > 0 ? shippingMethod.formatted_price_amount_for_shipment : this.$t('generic.free'),
-        min_days: deliveryLeadTime.attributes.min_days,
-        max_days: deliveryLeadTime.attributes.max_days
+        min_days: deliveryLeadTime ? deliveryLeadTime.attributes.min_days : '',
+        max_days: deliveryLeadTime ? deliveryLeadTime.attributes.max_days : ''
       }
     },
     handleChange (shippingMethod) {
