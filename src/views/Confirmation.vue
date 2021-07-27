@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mr-4">
     <v-card>
       <div>
         <header>
