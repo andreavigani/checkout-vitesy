@@ -32,7 +32,7 @@
           @blur="handleBlur('company')"
         ></v-text-field>
       </v-flex>
-      <v-flex xs6 px-2>
+      <v-flex md6 sm12 px-2>
         <v-text-field
           id="billing-address-first-name"
           :label="inputLabel('first_name')"
@@ -42,7 +42,7 @@
           @blur="handleBlur('first_name')"
         ></v-text-field>
       </v-flex>
-      <v-flex xs6 px-2>
+      <v-flex sm12 md6 px-2>
         <v-text-field
           id="billing-address-last-name"
           :label="inputLabel('last_name')"
@@ -52,7 +52,7 @@
           @blur="handleBlur('last_name')"
         ></v-text-field>
       </v-flex>
-      <v-flex xs12 sm6 px-2>
+      <v-flex md6 sm12 px-2>
         <v-text-field
           id="billing-address-line-1"
           :label="inputLabel('line_1')"
@@ -63,7 +63,7 @@
           @blur="handleBlur('line_1')"
         ></v-text-field>
       </v-flex>
-      <v-flex xs6 px-2>
+      <v-flex sm12 md6 px-2>
         <v-text-field
           id="billing-address-city"
           :label="inputLabel('city')"
@@ -73,7 +73,7 @@
           @blur="handleBlur('city')"
         ></v-text-field>
       </v-flex>
-      <v-flex xs6 px-2>
+      <v-flex sm12 md6 px-2>
         <v-autocomplete
           id="billing-address-country-code"
           :label="inputLabel('country_code')"

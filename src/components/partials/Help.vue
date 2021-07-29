@@ -5,7 +5,7 @@
     </h2>
     <ul class="order-help-nav">
       <li v-for="(faq, index) in faqs" :key="`l-${index}`">
-        <v-dialog v-model="dialog" width="800" >
+        <v-dialog :ref="`l-${index}`" v-model="dialog[index]" width="800" >
           <template v-slot:activator="{ on, attrs }">
             <v-link name="faq" v-bind="attrs" v-on="on">{{ faq.title }}</v-link>
           </template>
@@ -33,7 +33,7 @@
 export default {
   data () {
     return {
-      dialog: false
+      dialog: []
     }
   },
   computed: {
